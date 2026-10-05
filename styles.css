@@ -1,0 +1,307 @@
+/* ===== Reset (Clase 2 y 3) ===== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+p{
+    margin-bottom: 10px;
+}
+
+h2{
+    color: #15543f;
+    margin-bottom: 10px;
+}
+
+h3{
+    margin-bottom: 6px;
+}
+
+/* ===== Encabezado (Flexbox, Clase 4) ===== */
+#encabezado{
+    background-color: #1f7a5c;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo{
+    width: 260px;
+    background-color: white;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+#encabezado h1{
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* ===== Menu (Pseudoclase :hover y anidado, Clase 6) ===== */
+#menu{
+    background-color: #f1f1f1;
+    box-shadow: 0px 5px 10px rgb(88, 87, 87);
+}
+
+#menu ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    li{
+        margin: 6px 8px;
+        padding: 8px 12px;
+        border: solid black 1px;
+        border-radius: 5px;
+        background-color: #15543f;
+        color: white;
+        &:hover{
+            background-color: rgb(240, 242, 174);
+            color: black;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+}
+
+#banner{
+    width: 100%;
+    display: block;
+}
+
+/* ===== Estructura con Grid, mobile first (Clase 5) ===== */
+#container{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas:
+    "inicio"
+    "programa"
+    "perfil"
+    "plan"
+    "admision"
+    "datos"
+    "contacto"
+    ;
+}
+
+#inicio{
+    grid-area: inicio;
+    background-color: #e8f3ee;
+}
+
+#programa{
+    grid-area: programa;
+}
+
+#perfil{
+    grid-area: perfil;
+    background-color: #f7f7f7;
+}
+
+#plan{
+    grid-area: plan;
+}
+
+#admision{
+    grid-area: admision;
+    background-color: #f7f7f7;
+}
+
+aside{
+    grid-area: datos;
+    background-color: #e8f3ee;
+}
+
+#contacto{
+    grid-area: contacto;
+}
+
+.seccion{
+    padding: 25px 20px;
+}
+
+/* ===== Componentes ===== */
+.caja{
+    background-color: #f1f1f1;
+    border: solid #cccccc 1px;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+}
+
+.tarjetas{
+    display: flex;
+    flex-direction: column;
+}
+
+#hechos{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0px;
+}
+
+.dato{
+    background-color: white;
+    border: solid #1f7a5c 1px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 6px 0px;
+    text-align: center;
+}
+
+#proposito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logoPrograma{
+    width: 250px;
+    transition: 0.5s;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+#plan li{
+    padding: 6px 0px;
+    border-bottom: solid #cccccc 1px;
+}
+
+#plan ul{
+    margin-bottom: 15px;
+}
+
+.boton{
+    display: inline-block;
+    background-color: #1f7a5c;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    margin: 8px 8px 0px 0px;
+    &:hover{
+        background-color: #15543f;
+    }
+}
+
+aside li{
+    margin-bottom: 8px;
+}
+
+/* ===== Boton fijo (position: fixed, Clase 3) ===== */
+#botonContacto{
+    width: 70px;
+    height: 70px;
+    background-color: #d98f3d;
+    border-radius: 50%;
+    position: fixed;
+    top: calc(100% - 90px);
+    left: calc(100% - 90px);
+    display: inline-block;
+    text-align: center;
+    padding-top: 27px;
+    font-size: 0.8rem;
+    color: black;
+    text-decoration: none;
+    box-shadow: 0px 5px 10px rgb(88, 87, 87);
+    transition: 0.5s;
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+
+/* ===== Pie de pagina ===== */
+footer{
+    background-color: #15543f;
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+#logoPie{
+    width: 100px;
+    background-color: white;
+    padding: 6px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+footer a{
+    color: white;
+}
+
+#redes{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px;
+    li{
+        margin: 0px 10px;
+    }
+}
+
+/* ===== Responsive: tablet (Clase 5) ===== */
+@media (min-width: 480px) and (max-width: 768px){
+    #container{
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+        "inicio inicio"
+        "programa programa"
+        "perfil perfil"
+        "plan plan"
+        "admision datos"
+        "contacto contacto"
+        ;
+    }
+    #hechos, .tarjetas{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .dato{
+        width: 30%;
+    }
+}
+
+/* ===== Responsive: escritorio ===== */
+@media (min-width: 769px){
+    #container{
+        grid-template-columns: 70% 30%;
+        grid-template-areas:
+        "inicio inicio"
+        "programa datos"
+        "perfil datos"
+        "plan datos"
+        "admision datos"
+        "contacto contacto"
+        ;
+    }
+    #encabezado{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #encabezado h1{
+        margin-top: 0px;
+    }
+    #menu{
+        position: sticky;
+        top: 0px;
+    }
+    #hechos, .tarjetas, #proposito{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .dato{
+        width: 30%;
+    }
+    .tarjetas .caja{
+        width: 48%;
+    }
+}
